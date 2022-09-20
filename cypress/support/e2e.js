@@ -18,3 +18,8 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+beforeEach(() => {
+    cy.intercept('GET', '/angular-app/**').as('ignore hotreload');
+    cy.intercept('GET', '/issue/**').as('ignore hotreload');
+    cy.intercept('POST', '/Infrastucture/**').as('ignore hotreload');
+});
